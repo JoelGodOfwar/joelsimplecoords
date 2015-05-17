@@ -1,0 +1,14 @@
+{
+	"versionList": [
+		{
+			"mcVersion":"Minecraft 1.8",
+			"modVersion":"1.8_0.2",
+			"changeLog": [
+				"Prioritize mod sent updates"
+			],
+			"updateURL":"coming soon",
+			"isDirectLink":"true",
+			"newFileName":""
+		}
+	]
+}
