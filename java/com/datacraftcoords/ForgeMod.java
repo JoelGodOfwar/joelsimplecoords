@@ -2,21 +2,18 @@ package com.datacraftcoords;
 
 import java.io.File;
 
-import com.datacraftcoords.event.EventManager;
-
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLInterModComms;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = "JoelGodOfWars.Simple.Coordinate.Mod", name = "JoelGodOfWar's Simple Coordinate Mod", version = "1.8-0.2")
+@Mod(modid = "JoelGodOfWars.Simple.Coordinate.Mod", name = "JoelGodOfWar's Simple Coordinate Mod", version = "1.8-0.3")
 public class ForgeMod {
 	@Instance(value = "JoelGodOfWars.Simple.Coordinate.Mod")
 	public static ForgeMod instance;
@@ -46,8 +43,8 @@ public class ForgeMod {
 	public void init(FMLInitializationEvent event){
 		MinecraftForge.EVENT_BUS.register(new com.datacraftcoords.event.EventManager());
 		/** VERSION CHECKER */
-		//String link = "https://raw.githubusercontent.com/yourName/YourMod/master/src/main/resources/versionlist.json";
-		//FMLInterModComms.sendRuntimeMessage("your_mod_id", "VersionChecker", "addVersionCheck", link);
+		String link = "https://raw.githubusercontent.com/JoelGodOfwar/joelsimplecoords/master/versionlist.json";
+		FMLInterModComms.sendRuntimeMessage("JoelGodOfWars.Simple.Coordinate.Mod", "VersionChecker", "addVersionCheck", link);
 		
 	}
 	@EventHandler
