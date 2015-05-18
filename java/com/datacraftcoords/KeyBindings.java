@@ -7,10 +7,14 @@ import org.lwjgl.input.Keyboard;
 public class KeyBindings {
     public static KeyBinding varChat;
     public static KeyBinding varEnabled;
+    public static KeyBinding varChunk;
     public static void init() {
-    	varChat = new KeyBinding("key.varChat", Keyboard.KEY_X, "key.categories.myCoordMod");//"key.categories.yourMod");
+    	varChat = new KeyBinding("key.varChat", Keyboard.KEY_B, "key.categories.myCoordMod");//"key.categories.yourMod");
 	    ClientRegistry.registerKeyBinding(varChat);
-	    varEnabled = new KeyBinding("key.varEnabled", Keyboard.KEY_L, "key.categories.myCoordMod");
+	    varEnabled = new KeyBinding("key.varEnabled", Keyboard.KEY_N, "key.categories.myCoordMod");
 	    ClientRegistry.registerKeyBinding(varEnabled);
+	    varChunk = new KeyBinding("key.varChunk", Keyboard.KEY_M, "key.categories.myCoordMod");
+	    ClientRegistry.registerKeyBinding(varChunk);
+	    
     }
 }

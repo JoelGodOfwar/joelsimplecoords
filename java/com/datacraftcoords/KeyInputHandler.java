@@ -32,11 +32,9 @@ public void onKeyInput(InputEvent.KeyInputEvent event) {
   }
   if(KeyBindings.varEnabled.isPressed()){
 	  EventManager.ToggleEnabled();
-	  
-	  //System.out.println("KEY L");
-	  
-	  //OPEN GUI
-   
+  }
+  if(KeyBindings.varChunk.isPressed()){
+	  EventManager.chunkEnabled = !EventManager.chunkEnabled; 
   }
 }
 protected static Minecraft mc = Minecraft.getMinecraft();

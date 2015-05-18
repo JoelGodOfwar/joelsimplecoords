@@ -35,6 +35,7 @@ public class Configs {
     	{
             config = new Configuration(configFile);
             config.load();
+            EventManager.Enabled = config.getBoolean("Enabled", CATEGORY_GENERAL, false, "");
     	}
         
         Property p;

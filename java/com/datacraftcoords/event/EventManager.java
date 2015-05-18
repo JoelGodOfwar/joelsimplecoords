@@ -20,6 +20,7 @@ public class EventManager {
 	//public static String daConfig;
 	/** Enables/Disables this Mod */
 	public static boolean Enabled;
+	public static boolean chunkEnabled;
 
     /**
      * Toggles this Mod on or off
@@ -87,7 +88,11 @@ public class EventManager {
 			int inChunkY = GetYCoordinate() % 16;
 			int inChunkZ = GetZCoordinate() % 16;
 			String daChunk = ("" + Integer.toString(inChunkX) + " " + Integer.toString(inChunkY) + " " + Integer.toString(inChunkZ) + " in " + Integer.toString(chunkX) + " " + Integer.toString(chunkY) + " " + Integer.toString(chunkZ)); 
-			mc.fontRendererObj.drawString("C: " + daChunk + "", 2, 32, 0xffffff);
+			
+			if(chunkEnabled){
+				mc.fontRendererObj.drawString("C: " + daChunk + "", 2, 32, 0xffffff);
+			}
+			
 		}
 		}
 	}
