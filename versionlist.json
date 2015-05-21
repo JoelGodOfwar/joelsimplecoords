@@ -2,9 +2,9 @@
 	"versionList": [
 		{
 			"mcVersion":"Minecraft 1.8",
-			"modVersion":"1.8_0.5",
+			"modVersion":"1.8_0.6",
 			"changeLog": [
-				"Prioritize mod sent updates"
+				"Added display of Repair Times in Anvil GUI"
 			],
 			"updateURL":"http://minecraft.curseforge.com/mc-mods/230599-joelgodofwars-simple-coordinates-mod/files/latest",
 			"isDirectLink":"true",

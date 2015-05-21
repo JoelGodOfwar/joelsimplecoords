@@ -36,6 +36,7 @@ public class Configs {
             config = new Configuration(configFile);
             config.load();
             EventManager.Enabled = config.getBoolean("Enabled", CATEGORY_GENERAL, false, "");
+            EventManager.chunkEnabled = config.getBoolean("ChunkEnabled", CATEGORY_GENERAL, false, "");
     	}
         
         Property p;
@@ -44,6 +45,11 @@ public class Configs {
 	    p.comment = "Enable/Disable display of coordinates";
 	    
 	    p.set(EventManager.Enabled);
+	    
+	    p = config.get(CATEGORY_GENERAL, "ChunkEnabled", true);
+	    p.comment = "Enable/Disable display of Chunk coordinates";
+	    
+	    p.set(EventManager.chunkEnabled);
 	    config.save();
     }
 }

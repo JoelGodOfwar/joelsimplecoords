@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.InputEvent;
 //import com.datacraftcoords.event.EventManager;
 
+
 import com.datacraftcoords.event.EventManager;
 
 public class KeyInputHandler {
@@ -34,7 +35,8 @@ public void onKeyInput(InputEvent.KeyInputEvent event) {
 	  EventManager.ToggleEnabled();
   }
   if(KeyBindings.varChunk.isPressed()){
-	  EventManager.chunkEnabled = !EventManager.chunkEnabled; 
+	  EventManager.chunkEnabled = !EventManager.chunkEnabled;
+	  Configs.SaveConfigSettings();
   }
 }
 protected static Minecraft mc = Minecraft.getMinecraft();

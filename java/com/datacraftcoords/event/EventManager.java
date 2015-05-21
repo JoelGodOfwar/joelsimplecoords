@@ -5,6 +5,7 @@ package com.datacraftcoords.event;
 import org.lwjgl.opengl.GL11;
 
 import com.datacraftcoords.Configs;
+import com.datacraftcoords.GuiRepairOverride;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.init.Items;
@@ -14,6 +15,9 @@ import net.minecraft.util.MathHelper;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraft.client.gui.GuiRepair;
+import net.minecraft.client.gui.inventory.GuiEditSign;
+import net.minecraftforge.client.event.GuiOpenEvent;
 
 public class EventManager {
 	
@@ -57,7 +61,7 @@ public class EventManager {
 	        	coordinateString2 = coordinateString2.replace("{y}", Integer.toString(GetYCoordinate()));
 	        	coordinateString2 = coordinateString2.replace("{z}", Integer.toString(GetZCoordinate() / 8));
 	        	/** Display Nether Coords, Overworld Dived by 8*/
-	        	mc.fontRendererObj.drawString(EnumChatFormatting.LIGHT_PURPLE + "N: " + coordinateString2 + EnumChatFormatting.GREEN + " XP:" + getXP(), 2, 12, 0xffffff);
+	        	mc.fontRendererObj.drawString(EnumChatFormatting.LIGHT_PURPLE + "N: " + coordinateString2 + EnumChatFormatting.GREEN + " XP: " + getXP(), 2, 12, 0xffffff);
 	        	//System.out.println("Biome " + varBiome + " - coord1 " + coordinateString + " - coord2 " + coordinateString2);
 	        	}
 			else if(varBiome.equals("Hell")){
@@ -74,7 +78,7 @@ public class EventManager {
 	        	coordinateString4 = coordinateString4.replace("{y}", Integer.toString(GetYCoordinate()));
 	        	coordinateString4 = coordinateString4.replace("{z}", Integer.toString((GetZCoordinate() * 8)));
 	        	/** Display Overworld Coords, Nether Multiplied by 8 */
-	        	mc.fontRendererObj.drawString(EnumChatFormatting.YELLOW + "O: " + coordinateString4 + EnumChatFormatting.GREEN + " XP:" + getXP(), 2, 12, 0xffffff);
+	        	mc.fontRendererObj.drawString(EnumChatFormatting.YELLOW + "O: " + coordinateString4 + EnumChatFormatting.GREEN + " XP: " + getXP(), 2, 12, 0xffffff);
 	        	//System.out.println("Biome " + varBiome + " - coord3 " + coordinateString3 + " - coord4 " + coordinateString4);
 			}
 			
@@ -185,4 +189,16 @@ public class EventManager {
     	long time = (mc.theWorld.getWorldTime()) % 24000;
     	return time >= mobSpawningStartTime && time < mobSpawningStopTime;
     }
+    @SubscribeEvent
+    public void GuiOpenEvent(GuiOpenEvent event)
+	{
+    	//if(UseQuickPlaceSign && event.gui instanceof GuiEditSign && mc.thePlayer.isSneaking())
+    	//{
+    	//	event.setCanceled(true);
+    	//}
+    	if(true && event.gui instanceof GuiRepair)
+    	{
+    		event.gui = new GuiRepairOverride(mc.thePlayer.inventory, mc.theWorld);
+    	}
+	}
 }
