@@ -4,7 +4,7 @@
 			"mcVersion":"Minecraft 1.8",
 			"modVersion":"1.8_0.7",
 			"changeLog": [
-				"Added display of Repair Times in Anvil GUI"
+				"Added Potion Timers"
 			],
 			"updateURL":"http://minecraft.curseforge.com/mc-mods/230599-joelgodofwars-simple-coordinates-mod/files/latest",
 			"isDirectLink":"true",
