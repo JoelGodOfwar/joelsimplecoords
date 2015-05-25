@@ -7,7 +7,9 @@ import net.minecraftforge.fml.common.gameevent.InputEvent;
 //import com.datacraftcoords.event.EventManager;
 
 
+
 import com.datacraftcoords.event.EventManager;
+import com.datacraftcoords.event.PotionTimers;
 
 public class KeyInputHandler {
 @SubscribeEvent
@@ -33,6 +35,9 @@ public void onKeyInput(InputEvent.KeyInputEvent event) {
   }
   if(KeyBindings.varEnabled.isPressed()){
 	  EventManager.ToggleEnabled();
+  }
+  if(KeyBindings.varPotions.isPressed()){
+	  PotionTimers.ToggleEnabled();
   }
   if(KeyBindings.varChunk.isPressed()){
 	  EventManager.chunkEnabled = !EventManager.chunkEnabled;

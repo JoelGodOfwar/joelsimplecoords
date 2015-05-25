@@ -13,7 +13,7 @@ import net.minecraftforge.fml.common.event.FMLInterModComms;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = "JoelGodOfWars.Simple.Coordinate.Mod", name = "JoelGodOfWar's Simple Coordinate Mod", version = "1.8_0.6")
+@Mod(modid = "JoelGodOfWars.Simple.Coordinate.Mod", name = "JoelGodOfWar's Simple Coordinate Mod", version = "1.8_0.7")
 public class ForgeMod {
 	@Instance(value = "JoelGodOfWars.Simple.Coordinate.Mod")
 	public static ForgeMod instance;
@@ -36,6 +36,7 @@ public class ForgeMod {
 	@EventHandler
 	public void init(FMLInitializationEvent event){
 		MinecraftForge.EVENT_BUS.register(new com.datacraftcoords.event.EventManager());
+		MinecraftForge.EVENT_BUS.register(new com.datacraftcoords.event.HUDRenderer());
 		
 		/** VERSION CHECKER */
 		String link = "https://raw.githubusercontent.com/JoelGodOfwar/joelsimplecoords/master/versionlist.json";

@@ -2,6 +2,7 @@ package com.datacraftcoords;
 import java.io.File;
 
 import com.datacraftcoords.event.EventManager;
+import com.datacraftcoords.event.PotionTimers;
 
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
@@ -37,6 +38,7 @@ public class Configs {
             config.load();
             EventManager.Enabled = config.getBoolean("Enabled", CATEGORY_GENERAL, false, "");
             EventManager.chunkEnabled = config.getBoolean("ChunkEnabled", CATEGORY_GENERAL, false, "");
+            PotionTimers.Enabled = config.getBoolean("PotionTimerEnabled", CATEGORY_GENERAL, false, "");
     	}
         
         Property p;
@@ -45,6 +47,11 @@ public class Configs {
 	    p.comment = "Enable/Disable display of coordinates";
 	    
 	    p.set(EventManager.Enabled);
+	    
+	    p = config.get(CATEGORY_GENERAL, "PotionTimerEnabled", true);
+	    p.comment = "Enable/Disable display of coordinates";
+	    
+	    p.set(PotionTimers.Enabled);
 	    
 	    p = config.get(CATEGORY_GENERAL, "ChunkEnabled", true);
 	    p.comment = "Enable/Disable display of Chunk coordinates";
