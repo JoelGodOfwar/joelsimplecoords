@@ -2,9 +2,9 @@
 	"versionList": [
 		{
 			"mcVersion":"Minecraft 1.8",
-			"modVersion":"1.8_0.7",
+			"modVersion":"1.8_0.8",
 			"changeLog": [
-				"Added Potion Timers"
+				"Bug fix: Fixed an issue where the Experiance bar would not be visible."
 			],
 			"updateURL":"http://minecraft.curseforge.com/mc-mods/230599-joelgodofwars-simple-coordinates-mod/files/latest",
 			"isDirectLink":"true",

@@ -49,8 +49,9 @@ public class PotionTimers {
     protected static final int[] blinkingSpeed = {5, 10, 20};					//how often the blinking occurs
     protected static final int[] blinkingDuration = {2, 3, 3};					//how long the blink lasts
 
-    protected static int potionLocX = 1;
-    protected static int potionLocY = 48;
+    protected static int potionLocX = 150;
+    
+    protected static int potionLocY = 1;
 
     /**
      * Renders the duration any potion effects that the player currently has on the left side of the screen.
@@ -60,25 +61,16 @@ public class PotionTimers {
         //if the player is in the world
         //and not in a menu (except for chat and the custom Options menu)
         //and F3 not shown
-        /**if (PotionTimers.Enabled &&
-                (mc.inGameHasFocus || (mc.currentScreen != null && (mc.currentScreen instanceof GuiChat || TabIsSelectedInOptionsGui()))) &&
-        		!mc.gameSettings.showDebugInfo)*/
-    	/**if (PotionTimers.Enabled &&
-                mc.inGameHasFocus ||
-                (mc.currentScreen != null && (mc.currentScreen instanceof GuiChat || TabIsSelectedInOptionsGui())) &&
-        		!mc.gameSettings.showDebugInfo)*/
-    	//LogHandler.debug("00 ReturnOntoHud Called.");
-    	//LogHandler.debug("00a Enabled=" + PotionTimers.Enabled + ", Hasfocus=" + mc.inGameHasFocus +", currentscreen=" + mc.currentScreen);
     	if (PotionTimers.Enabled && (mc.inGameHasFocus || mc.currentScreen == null || (mc.currentScreen instanceof GuiChat)) &&
                     !mc.gameSettings.showDebugInfo)
         {
-        	//LogHandler.debug("01 If condition met.");
-    		//System.out.println("Potion check true..............................................................................");
+        	
         	Collection potionEffects = mc.thePlayer.getActivePotionEffects();	//key:potionId, value:potionEffect
             Iterator it = potionEffects.iterator();
             
-            int x = potionLocX;
+            int x =  potionLocX;
             int y = potionLocY;
+            //a = mc.;
             
             //x /= PotionScale;
             //y /= PotionScale;
@@ -94,18 +86,18 @@ public class PotionTimers {
 
                 if (!isFromBeacon)	//ignore effects from Beacons (Minecraft bug: isFromBeacon is always false)
                 {
-                	//LogHandler.debug("02 Not from beacon.");
+                	
                 	ShowPotionIcons = true;
                 	if(ShowPotionIcons)
                 	{
-                		//LogHandler.debug("03 Show icons ON");
+                		
                 		DrawPotionIcon(x, y, potion);
                 		DrawPotionDuration(x+10, y, potion, potionEffect);
                 	}
                 	else{
                 		UsePotionColors = true;
                 		DrawPotionDuration(x, y, potion, potionEffect);
-                		//LogHandler.debug("04 Show icons OFF. X=" + x + ", Y=" + y + ", potion=" + potion + ", PotionEffect=" + potionEffect);
+                		
                 	}
                 	y += 10;
                     i++;
@@ -114,7 +106,7 @@ public class PotionTimers {
 
             GL11.glScalef(1f/PotionScale, 1f/PotionScale, 1f/PotionScale);
         }
-        //else LogHandler.debug("05 If condition failed.");//System.out.println("HAs focus=" + mc.inGameHasFocus + ", current screen=" + mc.currentScreen + ", debug info=" + !mc.gameSettings.showDebugInfo + "..............................................................................");
+        
     }
 
 
@@ -134,7 +126,6 @@ public class PotionTimers {
 		if(UsePotionColors)
 			colorInt = potion.getLiquidColor();
 		
-		
 		//boolean unicodeFlag = mc.fontRendererObj.getUnicodeFlag();
         //mc.fontRendererObj.setUnicodeFlag(true);
 		
@@ -142,11 +133,7 @@ public class PotionTimers {
 		if (potionDuration >= blinkingThresholds[blinkingThresholds.length - 1])	//if the text is not blinking then render it normally
 		{
 			mc.fontRendererObj.drawString("" + durationString, x, y, colorInt);
-			/**String potionName = "";
-        	potionName = potion.getName();
-        	String delims = "[.]";
-        	String[] potArray = potionName.split(delims);
-        	mc.fontRendererObj.drawString("" + (potArray[1]) + " " + durationString, x, y, colorInt);*/
+			
 		}
 		else //else if the text is blinking, have a chance to not render it based on the blinking variables
 		{
@@ -158,19 +145,14 @@ public class PotionTimers {
 		            if (potionDuration % blinkingSpeed[j] > blinkingDuration[j])
 		            {
 		            	mc.fontRendererObj.drawString("" + durationString, x, y, colorInt);
-		            	/**String potionName = "";
-		            	potionName = potion.getName();
-		            	String delims = "[.]";
-		            	String[] potArray = potionName.split(delims);
-		            	mc.fontRendererObj.drawString("" + (potArray[1]) + " " + durationString, x, y, colorInt);*/
+		            	
 		            }
 
 		            break;
 		        }
 		    }
 		}
-
-        //mc.fontRendererObj.setUnicodeFlag(unicodeFlag);
+		//mc.fontRendererObj.setUnicodeFlag(unicodeFlag);
 	}
     
     /**
@@ -222,15 +204,14 @@ public class PotionTimers {
     
     
     /**
-     * Checks to see if the Potion Timers tab is selected in GuiZyinHUDOptions
+     * 
      * @return
      */
     //
     private static boolean TabIsSelectedInOptionsGui()
     {
     	return true;
-    	//return mc.currentScreen instanceof GuiZyinHUDOptions &&
-    		//(((GuiZyinHUDOptions)mc.currentScreen).IsButtonTabSelected(Localization.get("potiontimers.name")));
+    	
     }
     
 
@@ -240,7 +221,7 @@ public class PotionTimers {
      */
     public static boolean ToggleShowPotionIcons()
     {
-    	return true; //return ShowPotionIcons = !ShowPotionIcons;
+    	return true;
     }
     
     /**
@@ -249,7 +230,7 @@ public class PotionTimers {
      */
     public static boolean ToggleUsePotionColors()
     {
-    	return true; //return UsePotionColors = !UsePotionColors;
+    	return true; 
     }
     
     /**

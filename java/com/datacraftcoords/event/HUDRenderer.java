@@ -38,16 +38,12 @@ private static Minecraft mc = Minecraft.getMinecraft();
     	if(event.type == RenderGameOverlayEvent.ElementType.TEXT)
     	{
     		
-    		//InfoLine.RenderOntoHUD();
-    		//DistanceMeasurer.RenderOntoHUD();
-            //DurabilityInfo.RenderOntoHUD();
             PotionTimers.RenderOntoHUD();
-            //HUDEntityTrackerHelper.RenderEntityInfo(event.partialTicks);	//calls other mods that need to render things on the HUD near entities
-            //ItemSelector.RenderOntoHUD(event.partialTicks);
+
     	}
     	else if(event.type == RenderGameOverlayEvent.ElementType.DEBUG)
     	{
-           // AnimalInfo.RenderOntoDebugMenu();
+           // 
     	}
     	
     	
@@ -67,14 +63,7 @@ private static Minecraft mc = Minecraft.getMinecraft();
     @SubscribeEvent
     public void RenderWorldLastEvent(RenderWorldLastEvent event)
     {
-        //render unsafe positions (cache calculations are done from this render method)
-        //SafeOverlay.instance.RenderAllUnsafePositionsMultithreaded(event.partialTicks);
-    	
-        //calls other mods that need to render things in the game world nearby other entities
-       // RenderEntityTrackerHelper.RenderEntityInfo(event.partialTicks);
-        
-        //store world render transform matrices for later use when rendering HUD
-       // HUDEntityTrackerHelper.StoreMatrices();
+        //
     }
     
     
