@@ -13,7 +13,7 @@ import net.minecraftforge.fml.common.event.FMLInterModComms;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = "JoelGodOfWars.Simple.Coordinate.Mod", name = "JoelGodOfWar's Simple Coordinate Mod", version = "1.8_0.8")
+@Mod(modid = "JoelGodOfWars.Simple.Coordinate.Mod", name = "JoelGodOfWar's Simple Coordinate Mod", version = "1.8_0.9")
 public class ForgeMod {
 	@Instance(value = "JoelGodOfWars.Simple.Coordinate.Mod")
 	public static ForgeMod instance;

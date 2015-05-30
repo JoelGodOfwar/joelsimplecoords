@@ -17,6 +17,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
+import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 import net.minecraftforge.client.event.RenderWorldLastEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -32,13 +33,14 @@ private static Minecraft mc = Minecraft.getMinecraft();
 	 * @param event
 	 */
     @SubscribeEvent
-    public void RenderGameOverlayEvent(RenderGameOverlayEvent event)
+    public void RenderGameOverlayEvent(RenderGameOverlayEvent.Post event)
     {
     	//render everything onto the screen
-    	if(event.type == RenderGameOverlayEvent.ElementType.TEXT)
+    	if(event.type == RenderGameOverlayEvent.ElementType.ALL)
     	{
     		
             PotionTimers.RenderOntoHUD();
+            
 
     	}
     	else if(event.type == RenderGameOverlayEvent.ElementType.DEBUG)

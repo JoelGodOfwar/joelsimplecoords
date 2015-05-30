@@ -11,6 +11,7 @@ import net.minecraftforge.client.event.GuiOpenEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
 import org.lwjgl.opengl.GL11;
 
 import com.datacraftcoords.Configs;
@@ -35,12 +36,12 @@ public class EventManager {
     }
 	
 	@SubscribeEvent
-	public void renderOverlay(RenderGameOverlayEvent e){
+	public void renderOverlay(RenderGameOverlayEvent.Post e){
 		/** Checks if Enabled, if it is Enabled process code. */
 		if(EventManager.Enabled)
         {
 			/** Checks if experience bar is displayed or not. If it is start code. */
-		if(e.type == RenderGameOverlayEvent.ElementType.TEXT){//if(e.type == ElementType.JUMPBAR || e.type == ElementType.EXPERIENCE){
+		if(e.type == RenderGameOverlayEvent.ElementType.ALL){//if(e.type == ElementType.JUMPBAR || e.type == ElementType.EXPERIENCE){
 			//String DefaultChatStringFormat = "[{x}, {y}, {z}]";
 			/** Gets Biome, and compares it to nether. Then alters the coords displayed based on results */
 			String varBiome = getBiome();

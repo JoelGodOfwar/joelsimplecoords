@@ -29,7 +29,7 @@ public void onKeyInput(InputEvent.KeyInputEvent event) {
   	}
 	mc.thePlayer.sendChatMessage("My " + varWorld + "Coords: " + coordinateString);//mc.fontRendererObj.drawString("Z Pressed", 2, 20, 0xffffff);
 	  //System.out.println("KEY Z");
-	  
+	
 	  //OPEN GUI
    
   }

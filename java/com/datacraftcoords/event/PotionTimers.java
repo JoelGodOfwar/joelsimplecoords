@@ -13,6 +13,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraft.util.StatCollector;
+import net.minecraftforge.client.event.RenderGameOverlayEvent;
 
 import org.lwjgl.opengl.GL11;
 
@@ -58,14 +59,17 @@ public class PotionTimers {
      */
     public static void RenderOntoHUD()
     {
-        //if the player is in the world
+        //if(!(mc.currentScreen instanceof GuiChat)){
+    	
+    	//if the player is in the world
         //and not in a menu (except for chat and the custom Options menu)
         //and F3 not shown
     	if (PotionTimers.Enabled && (mc.inGameHasFocus || mc.currentScreen == null || (mc.currentScreen instanceof GuiChat)) &&
-                    !mc.gameSettings.showDebugInfo)
+                    !mc.gameSettings.showDebugInfo) //|| (mc.currentScreen instanceof GuiChat)) &&
         {
         	
-        	Collection potionEffects = mc.thePlayer.getActivePotionEffects();	//key:potionId, value:potionEffect
+    		//mc.fontRendererObj.drawStringWithShadow("CS: " + (mc.currentScreen == null) + "", 2, 60, 0xffffff);
+    		Collection potionEffects = mc.thePlayer.getActivePotionEffects();	//key:potionId, value:potionEffect
             Iterator it = potionEffects.iterator();
             
             int x =  potionLocX;
@@ -104,10 +108,10 @@ public class PotionTimers {
                 }
             }
 
-            GL11.glScalef(1f/PotionScale, 1f/PotionScale, 1f/PotionScale);
+            //GL11.glScalef(1f/PotionScale, 1f/PotionScale, 1f/PotionScale);
         }
         
-    }
+    }//}
 
 
     /**
