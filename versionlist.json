@@ -2,9 +2,9 @@
 	"versionList": [
 		{
 			"mcVersion":"Minecraft 1.8",
-			"modVersion":"1.8_0.9",
+			"modVersion":"1.8_1.0",
 			"changeLog": [
-				"Bug fix: Fixed an issue where the Chat Window/Command line would not be visible."
+				"Added optifine style zoom"
 			],
 			"updateURL":"http://minecraft.curseforge.com/mc-mods/230599-joelgodofwars-simple-coordinates-mod/files/latest",
 			"isDirectLink":"true",

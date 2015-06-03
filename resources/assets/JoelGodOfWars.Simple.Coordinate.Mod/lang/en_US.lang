@@ -2,4 +2,7 @@ key.varChat=Send Coords to Chat
 key.varEnabled=Enable / Disable
 key.varChunk=Display chunk info
 key.varPotions=Enable Potion Timers
+key.varZoom=Zoom
 key.categories.myCoordMod=JoelGodOfWars Simple Coordinates
+achievement.LazyCheater=Lazy Cheater
+achievement.LazyCheater.desc=Use Gamemode 1 to enter creative.

@@ -39,6 +39,7 @@ public class Configs {
             EventManager.Enabled = config.getBoolean("Enabled", CATEGORY_GENERAL, false, "");
             EventManager.chunkEnabled = config.getBoolean("ChunkEnabled", CATEGORY_GENERAL, false, "");
             PotionTimers.Enabled = config.getBoolean("PotionTimerEnabled", CATEGORY_GENERAL, false, "");
+            ZoomHandler.zoomMultiplier = config.get(CATEGORY_GENERAL, "zoomMultiplier", -5.0f).getDouble();
     	}
         
         Property p;
@@ -57,6 +58,11 @@ public class Configs {
 	    p.comment = "Enable/Disable display of Chunk coordinates";
 	    
 	    p.set(EventManager.chunkEnabled);
+	    
+	    p = config.get(CATEGORY_GENERAL, "zoomMultiplier", -15.0f);
+	    p.comment = "Amount of zoom, must be negative";
+	    
+	    p.set(ZoomHandler.zoomMultiplier);
 	    config.save();
     }
 }

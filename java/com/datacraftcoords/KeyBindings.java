@@ -9,6 +9,7 @@ public class KeyBindings {
     public static KeyBinding varEnabled;
     public static KeyBinding varChunk;
     public static KeyBinding varPotions;
+    public static KeyBinding varZoom;
     public static void init() {
     	varChat = new KeyBinding("key.varChat", Keyboard.KEY_B, "key.categories.myCoordMod");//"key.categories.yourMod");
 	    ClientRegistry.registerKeyBinding(varChat);
@@ -18,6 +19,8 @@ public class KeyBindings {
 	    ClientRegistry.registerKeyBinding(varChunk);
 	    varPotions = new KeyBinding("key.varPotions", Keyboard.KEY_L, "key.categories.myCoordMod");
 	    ClientRegistry.registerKeyBinding(varPotions);
+	    varZoom = new KeyBinding("key.varZoom", Keyboard.KEY_F, "key.categories.myCoordMod");
+	    ClientRegistry.registerKeyBinding(varZoom);
 	    
     }
 }

@@ -1,10 +1,15 @@
 package com.datacraftcoords;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.stats.Achievement;
+import net.minecraft.stats.AchievementList;
+import net.minecraftforge.common.AchievementPage;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.InputEvent;
 //import com.datacraftcoords.event.EventManager;
+
 
 
 
@@ -43,6 +48,10 @@ public void onKeyInput(InputEvent.KeyInputEvent event) {
 	  EventManager.chunkEnabled = !EventManager.chunkEnabled;
 	  Configs.SaveConfigSettings();
   }
+  /*if(KeyBindings.varZoom.isPressed()){
+	  System.out.println("varZoom key pressed......................................................................................................");
+	  EventManager.doZoom = true;
+  }*/
 }
 protected static Minecraft mc = Minecraft.getMinecraft();
 

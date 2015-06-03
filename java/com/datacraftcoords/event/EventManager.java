@@ -4,6 +4,7 @@ package com.datacraftcoords.event;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiRepair;
+import net.minecraft.client.renderer.EntityRenderer;
 import net.minecraftforge.client.GuiIngameForge;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.MathHelper;
@@ -11,11 +12,15 @@ import net.minecraftforge.client.event.GuiOpenEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent.RenderTickEvent;
+import net.minecraftforge.fml.relauncher.ReflectionHelper;
 
 import org.lwjgl.opengl.GL11;
 
 import com.datacraftcoords.Configs;
 import com.datacraftcoords.GuiRepairOverride;
+import com.datacraftcoords.KeyBindings;
 
 public class EventManager {
 	
@@ -199,4 +204,5 @@ public class EventManager {
     		event.gui = new GuiRepairOverride(mc.thePlayer.inventory, mc.theWorld);
     	}
 	}
+    
 }
