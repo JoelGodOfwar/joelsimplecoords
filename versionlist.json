@@ -2,9 +2,9 @@
 	"versionList": [
 		{
 			"mcVersion":"Minecraft 1.8",
-			"modVersion":"1.8_1.0",
+			"modVersion":"1.8_1.0.1",
 			"changeLog": [
-				"Added optifine style zoom"
+				"Added F3 Sky and Block Light levels", "Added Negative/Positive Z/X to compass", "Switch Potion Timer Keybind"
 			],
 			"updateURL":"http://minecraft.curseforge.com/mc-mods/230599-joelgodofwars-simple-coordinates-mod/files/latest",
 			"isDirectLink":"true",
