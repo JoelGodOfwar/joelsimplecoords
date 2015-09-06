@@ -21,7 +21,9 @@ import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 import net.minecraftforge.client.event.RenderWorldLastEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+import com.datacraftcoords.Do;
 import com.datacraftcoords.event.PotionTimers;
+import com.datacraftcoords.event.SafeOverlay;
 
 public class HUDRenderer {
 	public static HUDRenderer instance = new HUDRenderer();
@@ -65,7 +67,8 @@ private static Minecraft mc = Minecraft.getMinecraft();
     @SubscribeEvent
     public void RenderWorldLastEvent(RenderWorldLastEvent event)
     {
-        //
+    	//render unsafe positions (cache calculations are done from this render method)
+        SafeOverlay.instance.RenderAllUnsafePositionsMultithreaded(event.partialTicks);
     }
     
     
@@ -141,7 +144,7 @@ private static Minecraft mc = Minecraft.getMinecraft();
     //
     /**public static void RenderBlockTexture(int x, int y, Block block, int width, int height)
     {
-        TextureAtlasSprite textureAtlasSprite = mc.getBlockRendererDispatcher()..drawString().func_178122_a(block.getDefaultState());
+        TextureAtlasSprite textureAtlasSprite = mc.getBlockRendererDispatcher().func_175023_a().func_178122_a(block.getDefaultState());
         mc.getTextureManager().bindTexture(TextureMap.locationBlocksTexture);
         
         RenderTexture(x, y, textureAtlasSprite, width, height, 0);

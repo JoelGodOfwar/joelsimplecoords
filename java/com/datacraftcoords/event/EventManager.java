@@ -2,12 +2,19 @@ package com.datacraftcoords.event;
 
 
 
+import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiIngame;
+import net.minecraft.client.gui.GuiOverlayDebug;
 import net.minecraft.client.gui.GuiRepair;
 import net.minecraft.client.renderer.EntityRenderer;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.client.GuiIngameForge;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.MathHelper;
+import net.minecraft.world.EnumSkyBlock;
+import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.client.event.GuiOpenEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
@@ -18,9 +25,12 @@ import net.minecraftforge.fml.relauncher.ReflectionHelper;
 
 import org.lwjgl.opengl.GL11;
 
-import com.datacraftcoords.Configs;
+
+//import com.datacraftcoords.Configs;
+import com.datacraftcoords.Do;
 import com.datacraftcoords.GuiRepairOverride;
 import com.datacraftcoords.KeyBindings;
+import com.datacraftcoords.config.ConfigHandler;
 
 public class EventManager {
 	
@@ -28,6 +38,7 @@ public class EventManager {
 	/** Enables/Disables this Mod */
 	public static boolean Enabled;
 	public static boolean chunkEnabled;
+	public static boolean LightEnabled;
 
     /**
      * Toggles this Mod on or off
@@ -36,7 +47,7 @@ public class EventManager {
     public static void ToggleEnabled()
     {
     		Enabled = !Enabled;
-    		Configs.SaveConfigSettings();
+    		ConfigHandler.configFile.save();
     	        	
     }
 	
@@ -99,6 +110,28 @@ public class EventManager {
 			if(chunkEnabled){
 				mc.fontRendererObj.drawStringWithShadow("C: " + daChunk + "", 2, 32, 0xffffff);
 			}
+
+			/** Get Light Level */
+			if (LightEnabled){
+				BlockPos blockpos = new BlockPos(mc.getRenderViewEntity().posX, mc.getRenderViewEntity().getEntityBoundingBox().minY, mc.getRenderViewEntity().posZ);
+				Chunk chunk = mc.theWorld.getChunkFromBlockCoords(blockpos);
+				String daLight = "L: " + chunk.setLight(blockpos, 0);
+				daLight = daLight + " (S: " + chunk.getLightFor(EnumSkyBlock.SKY, blockpos) ;
+				int blockLight = chunk.getLightFor(EnumSkyBlock.BLOCK, blockpos);
+				if (blockLight < 8){
+					daLight = daLight + ", " + EnumChatFormatting.RED + "B: " + blockLight + EnumChatFormatting.WHITE + ")";
+				}
+				else {
+					daLight = daLight + ", B: " + blockLight + ")";
+				}
+							
+				if(chunkEnabled){
+					mc.fontRendererObj.drawStringWithShadow("" + daLight, 2, 42, 0xffffff);
+				}
+				else {
+					mc.fontRendererObj.drawStringWithShadow("" + daLight, 2, 32, 0xffffff);
+				}
+			}
 			
 		}
 		}
@@ -115,16 +148,16 @@ public class EventManager {
 		double var1 = getYaw();
 		String var2 = "";
 		if(var1 == 0){
-			var2 = "S";
+			var2 = "S +Z";
 		}
 		else if(var1 == 1){
-			var2 = "W";
+			var2 = "W -X";
 		}
 		else if(var1 == 2){
-			var2 = "N";
+			var2 = "N -Z";
 		}
 		else if(var1 == 3){
-			var2 = "E";
+			var2 = "E +X";
 		}
 		return var2;
 	}
@@ -148,6 +181,10 @@ public class EventManager {
 	public static int GetZCoordinate()
 	{
 		return (int) Math.floor(mc.thePlayer.posZ);
+	}
+	public static int GetEyeCoordinate()
+	{
+		return (int) Math.floor(mc.thePlayer.eyeHeight);//mc.thePlayer.posY
 	}
 	
 	private static long mobSpawningStartTime = 13187;

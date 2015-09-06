@@ -17,8 +17,9 @@ import net.minecraftforge.client.event.RenderGameOverlayEvent;
 
 import org.lwjgl.opengl.GL11;
 
-import com.datacraftcoords.Configs;
+//import com.datacraftcoords.Configs;
 import com.datacraftcoords.LogHandler;
+import com.datacraftcoords.config.ConfigHandler;
 import com.datacraftcoords.event.HUDRenderer;;
 
 public class PotionTimers {
@@ -35,11 +36,11 @@ public class PotionTimers {
 	public static void ToggleEnabled()
     {
     		Enabled = !Enabled;
-    		Configs.SaveConfigSettings();
+    		ConfigHandler.configFile.save();
     	        	
     }
     
-    private static ResourceLocation inventoryResourceLocation = new ResourceLocation("textures/gui/container/inventory.png");
+    private static ResourceLocation inventoryResourceLocation = new ResourceLocation("minecraft:textures/gui/container/inventory.png");
     
     public static boolean ShowPotionIcons;
     public static boolean UsePotionColors;

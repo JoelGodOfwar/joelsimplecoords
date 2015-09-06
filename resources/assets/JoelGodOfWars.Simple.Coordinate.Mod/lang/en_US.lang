@@ -3,6 +3,25 @@ key.varEnabled=Enable / Disable
 key.varChunk=Display chunk info
 key.varPotions=Enable Potion Timers
 key.varZoom=Zoom
+key.varSafe=Safe Overlay
 key.categories.myCoordMod=JoelGodOfWars Simple Coordinates
 achievement.LazyCheater=Lazy Cheater
 achievement.LazyCheater.desc=Use Gamemode 1 to enter creative.
+
+safeoverlay.name=Safe Overlay
+safeoverlay.mode.off=Off
+safeoverlay.mode.on=On
+safeoverlay.infoline=safe
+safeoverlay.options.tooltip=Marks blocks as "unsafe" by drawing a yellow X on them, which means that mobs can spawn there at night. A red X means it is dark enough for mobs to spawn there even during the day.
+safeoverlay.options.hotkey.tooltip=Ctrl + key = Toggle X-ray_p+ + key = Increase distance_p- + key = Decrease distance_p0 + key = Reset distance
+safeoverlay.options.drawdistance=Draw Distance: 
+safeoverlay.options.drawdistance.tooltip=Sets how far the safe overlay X marks are rendered. Setting this to a high value (50+) will lag the game.
+safeoverlay.options.transparency=Opacity: 
+safeoverlay.options.displayinnether=Show in Nether: 
+safeoverlay.options.displayinnether.tooltip=Mobs in the nether do not depend on light values for spawning, so it is recommended that this be kept off.
+safeoverlay.options.seethroughwalls=X-ray: 
+safeoverlay.seethroughwallsenabled=See through walls Enabled
+safeoverlay.seethroughwallsdisabled=See through walls Disabled
+safeoverlay.distance=Safe Overlay distance:
+safeoverlay.distance.max=max
+safeoverlay.distance.default=default
