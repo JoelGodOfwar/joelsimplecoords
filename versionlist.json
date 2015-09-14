@@ -2,9 +2,9 @@
 	"versionList": [
 		{
 			"mcVersion":"Minecraft 1.8",
-			"modVersion":"1.8_1.0.2",
+			"modVersion":"1.8_1.5.0",
 			"changeLog": [
-				"Fixed a Version Number mistake from 1.0.1 that caused it to say out of date.", "Added better Mod Configuration"
+				"Added VersionChecker Check", "Added option to move text to Left, Top, or Right sides.", "Use Arrow keys to change alignment of text."
 			],
 			"updateURL":"http://minecraft.curseforge.com/mc-mods/230599-joelgodofwars-simple-coordinates-mod/files/latest",
 			"isDirectLink":"true",
