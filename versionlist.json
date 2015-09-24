@@ -2,9 +2,9 @@
 	"versionList": [
 		{
 			"mcVersion":"Minecraft 1.8",
-			"modVersion":"1.8_1.5.0",
+			"modVersion":"1.8_1.5.1",
 			"changeLog": [
-				"Added VersionChecker Check", "Added option to move text to Left, Top, or Right sides.", "Use Arrow keys to change alignment of text."
+				"Fixed /gm # command", "added /day, and /night commands", "added a first time run function to display single player commands on first run."
 			],
 			"updateURL":"http://minecraft.curseforge.com/mc-mods/230599-joelgodofwars-simple-coordinates-mod/files/latest",
 			"isDirectLink":"true",
