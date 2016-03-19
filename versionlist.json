@@ -2,9 +2,9 @@
 	"versionList": [
 		{
 			"mcVersion":"Minecraft 1.8",
-			"modVersion":"1.8_1.5.1",
+			"modVersion":"1.9_1.5.3b",
 			"changeLog": [
-				"Fixed /gm # command", "added /day, and /night commands", "added a first time run function to display single player commands on first run."
+				"Port to 1.9"
 			],
 			"updateURL":"http://minecraft.curseforge.com/mc-mods/230599-joelgodofwars-simple-coordinates-mod/files/latest",
 			"isDirectLink":"true",
