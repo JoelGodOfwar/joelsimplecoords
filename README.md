@@ -1,7 +1,7 @@
 JoelGodOfWar's Simple Coordinate Mod
 ==============
 
-Current version is "1.8_1.0", please make sure you download that version, and not 1.8-0.2.
+Current version is "1.9_1.5.3b", please make sure you download that version, and not 1.8-0.2.
 
 This is a mod which adds various utilities and enhancements to make your life easier. Designed with the moderate Minecrafter in mind.
 It adds your coordinates(Nether and Overworld, and can auto send them to chat.), a compass(NSEW), a clock(Day/Night), XP (Amount you currently have, and amount needed for next level.), Biome, Chunk Coordinates, and Potion Timers. It works in both single player and multiplayer servers.
