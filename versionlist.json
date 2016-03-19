@@ -10,5 +10,15 @@
 			"isDirectLink":"true",
 			"newFileName":""
 		}
+		{
+			"mcVersion":"Minecraft 1.8",
+			"modVersion":"1.8_1.5.1",
+			"":[
+				""
+				],
+			"updateURL":"http://minecraft.curseforge.com/mc-mods/230599-joelgodofwars-simple-coordinates-mod/files/latest",
+			"isDirectLink":"true",
+			"newFileName":""
+		}
 	]
 }
