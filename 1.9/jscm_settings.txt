@@ -1,0 +1,11 @@
+showWaypoints:true
+showIngameWaypoints:true
+deathpoints:true
+oldDeathpoints:false
+waypointsScale:1.0
+dotsScale:1.0
+compassOverWaypoints:false
+keepWaypointNames:true
+waypointsDistance:0.0
+waypointsDistanceMin:0.0
+#WAYPOINTS HAVE BEEN MOVED TO xaerowaypoints.txt!
