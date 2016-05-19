@@ -1,0 +1,57 @@
+key.varChat=SEND COORDZ 2 CHAT
+key.varEnabled=Enable / Disable
+key.varChunk=Display chunk info
+key.varPotions=ENABLE POSHUN TIEMRS
+key.varZoom=Zoom In
+key.varSafe=Safe Overlay
+key.varLight=Display Light Level
+key.varDist=DISTANCE MEASURR
+key.varLeft=Align Left
+key.varTop=Align Top
+key.varRight=ALIGN RITE
+key.categories.myCoordMod=JoelGodOfWars SIMPLE COORDINATEZ
+achievement.LazyCheater=Lazy Cheater
+achievement.LazyCheater.desc=USE GAMEMODE 1 2 ENTR CREATIV.
+
+gui.deathpoint=Latest Death
+gui.default=Default
+gui.black=Black
+gui.dark_blue=Dark Blue
+gui.dark_green=Dark Green
+gui.dark_aqua=Dark Aqua
+gui.dark_red=Dark Red
+gui.dark_purple=Dark Purple
+gui.gold=Gold
+gui.gray=Gray
+gui.dark_gray=Dark Gray
+gui.blue=Blue
+gui.green=Green
+gui.aqua=Aqua
+gui.red=Red
+gui.purple=Purple
+gui.yellow=Yellow
+gui.white=White
+
+
+safeoverlay.name=Safe Overlay
+safeoverlay.mode.off=Off
+safeoverlay.mode.on=On
+safeoverlay.infoline=safe
+safeoverlay.options.tooltip=MARKZ BLOCKZ AS "UNSAFE" BY DRAWIN YELLOW X ON THEM, WHICH MEANZ DAT MOBS CAN SPAWN THAR AT NITE. RED X MEANZ IT DARK ENOUGH 4 MOBS 2 SPAWN THAR EVEN DURIN TEH DAI.
+safeoverlay.options.hotkey.tooltip=Ctrl + key = Toggle + key = Increase distance_p- + key = Decrease distance_p0 + key = Reset distance
+safeoverlay.options.drawdistance=Draw Distance: 
+safeoverlay.options.drawdistance.tooltip=SETS HOW FAR TEH SAFE OVERLAY X MARKZ R RENDERD. SETTIN DIS 2 HIGH VALUE (50+) WILL LAG TEH GAME.
+safeoverlay.options.transparency=Opacity: 
+safeoverlay.options.displayinnether=Show in Nether: 
+safeoverlay.options.displayinnether.tooltip=MOBS IN DA NETHR DO NOT DEPEND ON LIGHT VALUEZ 4 SPAWNIN, SO IT RECOMMENDD DAT DIS BE KEPT OFF.
+safeoverlay.distance=Safe Overlay distance:
+safeoverlay.distance.max=max
+safeoverlay.distance.default=default
+
+distancemeasurer.name=Distance Measurer
+distancemeasurer.mode.off=Off
+distancemeasurer.mode.simple=Simple
+;distancemeasurer.mode.complex=Complex
+distancemeasurer.mode.coordinate=Coordinate
+distancemeasurer.far=far
+distancemeasurer.options.tooltip=PRESIN TEH HOTKEY ONCE SHOWS U HOW FAR AWAY TEH BLOCK URE LOOKIN AT IZ._pPRESIN IT AGAIN WILL SHOW U TEH BLOCKZ COORDINATEZ.
